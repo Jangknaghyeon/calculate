@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>News</title>
+  <style>
+    h1 { text-align : center;}
+    .container{
+      width: 600px;
+      margin: auto;
+      display: flex;
+    }
+    .list-container{
+      width:300px
+    }
+    .list-item{
+      width: 90%;
+      border: 1px solid #ccc;
+      border-radius: 30px;
+      padding: 10px;
+      margin: 10px auto;
+    }
+    .preview-container{
+      width:300px
+    }
+
+    .preview__thumbnail {max-width: 100%}
+    .preview__title{
+      font-weight: bold;
+      font-size: 1.3em;
+      margin: 10px 0;
+    }
+    preview__desc{
+      padding: 10px 0;
+    }
+    .preview__btn{
+      font-size: 1.3em;
+    }
+  </style>
+  <script src = "//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+  <script>
+    $(function(){
+      $(".list-item").on("click", function(){
+        $(".preview__tumbnail").attr("src", $(this).data("image-url"));
+        $(".preview__title").text($(this).data("title"));
+        $(".preview__title").text($(this).data("desc"));
+      });
+
+      $(".list-item").each(function(index){
+        $(this).find(".item__title").text($(this).data("title"));
+        $(this).find(".item__desc").text($(this).data("desc"));
+      });
+    });
+  </script>
+</head>
+<body>
+  <h1>News</h1>
+  <div class="container">
+    <div class="list-container">
+      <div class="list-item" title="끓는 폭염, 이제 시작.."한 달 넘게 '가마솥 더위' 될 수도"" desc="전국이 폭염에 펄펄 끓었습니다. 삼척의 기온이 37.6도까지 올라갔고 서울도 33.2도로 올 들어 가장 더웠습니다. 앞으로 한 달 넘게 이런 폭염은 계속된다고 합니다." image-url="http://www.visualdive.co.kr/wp-content/uploads/2015/05/heat-wave-2.jpg">
+        <div class="item__title">11111111</div>
+      </div>
+      <div class="list-item" title="줄 사람도 받을 사람도 불만..'최저임금 대책' 묘안 나올까" desc="내년 최저임금이 시간당 8천350원으로 오른 문제, 요새 날씨 만큼이나 논란이 뜨겁습니다. 이걸 줘야 할 소상공인들은 너무 많다, 받아야 할 사람은 이것도 적다, 각각 반발인데, 정부가 그래서 양쪽을 다 달래기 위한 추가 대책을 곧 내놓을 걸로 보입니다." image-url="http://dimg.donga.com/wps/NEWS/IMAGE/2017/12/06/87599591.1.jpg">
+        <div class="item__title">AAAAAAA</div>
+      </div>
+      <div class="list-item" title="'대기업 재취업 알선' 전 공정위 간부, 자식까지 청탁 정황" desc="전직 공정위 간부들이 공정위에서 퇴직한 사람들이 대기업에 갈 수 있도록 불법 알선했다는 의혹이 있었죠. 그 중 한 고위 간부는 아들과 딸의 취업도 대기업에 청탁한 정황을 검찰이 확인했습니다." image-url="http://image.ytn.co.kr/general/jpg/2016/0728/201607282209547891_t.jpg">
+        <div class="item__title">AAAAAAA</div>
+      </div>
+      <div class="list-item" title="" desc="" image-url="">
+        <div class="item__title">AAAAAAA</div>
+      </div>
+    </div>
+    <div class="preview-container">
+      <img img class="preview__thumbnail"
+      src="https://travelblog.expedia.co.kr/wp-content/uploads/2016/06/03.jpg"
+      />
+      <div class="preview__title">AAAAAAA</div>
+      <button class="preview__btn">READ ME</button>
+    </div>
+  </div>
+</body>
+</html>

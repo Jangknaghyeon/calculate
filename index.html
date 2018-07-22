@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+     .bb{
+       border : 1px solid black;
+       width : 200px;
+       height : 100px;
+     }
+     .item{
+       background : yellow;
+       width : 100px;
+       height : 100px;
+       margin : 20px;
+     }
+     .active{
+       background : blue;
+       text-align : center;
+     }
+  </style>
+  <script src = "//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+  <script>
+    $(function(){
+      $("#aaa").on("click", function(){
+        $(".bb").fadeToggle();
+      });
+      $(".bb").on("click", function(){
+        //$(".bb").css("background". "red");
+        $(this).css("background", "red");
+      });
+      $(".item").on("mouseover", function(){
+        $(this).addClass("active");
+      });
+
+      $(".item").on("mouseleave", function(){
+        $(this).removeClass("active");
+      });
+      $("#btn-address").on("click",function(){
+        //console.log($("#txt-address").val());
+        $("#result").text($("#txt-address").val());
+      })
+      $(".item").on("click", function(){
+        //문장의 id를 바꾸고
+        $("#selectedId").text($(this).data("id"));
+        //문장의 Nickname을 바꾼다
+        $("#selectedNickname").text("BBBBBBB");
+      })
+    });
+
+
+  </script>
+</head>
+<body>
+  <div>
+   <input type="text" name="address"
+   id="txt-address" />
+   <button id="btn-address">클릭</button>
+   <p id="result"></p>
+ </div>
+ <button id="aaa">A버튼</button>
+ <p class="bb">
+   Aaaaaaaaaaaaaaaaaaa
+ </p>
+  <div class="container">
+    <div class="item" data-id="1" data-nickname="Box1">
+      item 1
+    </div>
+
+    <div class="item" data-id="2" data-nickname="Box2">
+        item 2
+    </div>
+
+    <div class="item" data-id="3" data-nickname="Box3">
+        item 3
+    </div>
+    <p>
+      선택된 박스의 ID는 <span id="selectedId">0000</span>입니다.<br />
+      선택된 박스의 Nickname은 <span id="selectedNickname">~~~~~~~~~~~~</span>입니다.
+    </p>
+</body>
+</html>
