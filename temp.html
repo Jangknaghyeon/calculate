@@ -4,11 +4,11 @@
   <title>calculator</title>
 </head>
 <body>
-  <input type="text" name="" id="num1" value="">
+  <input type="text" name="" id="num1" value="","\n">
   <input type="text" name="" id="num2" />
   <button id="add">+</button>
   <button id="sub">-</button>
-  <button id="nul">*</button>
+  <button id="mul">*</button>
   <button id="div">/</button>
   </div>
     결과 : <input type="text" id="result">
@@ -17,20 +17,94 @@
 <script>
   //console.log(document.getDlemenById('num1').value)
   function add(a,b){
-    return a+b
+    return Number(a)+Number(b)
   }
 
   function sub(a,b){
-    return a-b
+    return Number(a)-Number(b)
+  }
+
+  function mul(a,b){
+    return Number(a)*Number(b)
   }
 
   function div(a,b){
-    return a/b
+    return Number(a)/Number(b)
   }
 
-  function mul(a.b){
-    return a*b
+  var num1 = document.getElementById('num1')
+  var num2 = document.getElementById('num2')
+
+  var addFunc = document.getElementById('add')
+
+  var result = document.getElementById('result')
+
+  function calc(){
+    var n1 = prompt("첫번째 수")
+    var n2 = prompt("두번째 수")
+    console.log(name)
+
+    if(confirm("계산을 하시겠습니까?")){
+      result.value = add(n1,n2)
+    }
   }
+
+    addFunc.addEventListener('click', function(){
+
+    setTimeout(function(){
+      calc()
+    }, 5000)
+
+  })
+
+  var subFunc = document.getElementById('sub')
+
+  subFunc.addEventListener('click', function(){
+
+      var n1 = prompt("첫번째 수")
+      var n2 = prompt("두번째 수")
+      console.log(name)
+
+      if(confirm("계산을 하시겠습니까?")){
+        result.value = sub(n1,n2)
+      }else{
+
+      }
+  })
+
+  var mulFunc = document.getElementById('mul')
+
+  mulFunc.addEventListener('click', function(){
+
+      var n1 = prompt("첫번째 수")
+      var n2 = prompt("두번째 수")
+      console.log(name)
+
+      if(confirm("계산을 하시겠습니까?")){
+        result.value = mul(n1,n2)
+      }else{
+
+      }
+  })
+
+  var divFunc = document.getElementById('div')
+
+  divFunc.addEventListener('click', function(){
+
+      var n1 = prompt("첫번째 수")
+      var n2 = prompt("두번째 수")
+      console.log(name)
+      if(n2 == 0){
+        alert('0으로 나눌 수 없습니다.')
+      }else{
+        if(confirm("계산을 하시겠습니까?")){
+          result.value = div(n1,n2)
+        }
+
+      }
+  })
+
+
 
 </script>
 </html>
